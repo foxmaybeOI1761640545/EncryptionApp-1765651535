@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.encryption.ui.MainController">
+
+    <top>
+        <VBox spacing="6" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="12" right="12" bottom="6" left="12"/>
+            </padding>
+            <Label text="String Encryptor"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <Label text="AES-GCM + PBKDF2（输入任意字符：大小写/数字/符号/中文都支持）"
+                   style="-fx-opacity: 0.8;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="12">
+            <padding>
+                <Insets top="10" right="12" bottom="12" left="12"/>
+            </padding>
+
+            <GridPane hgap="10" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="120" prefWidth="120"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="密码（用于解密）：" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="passwordField"
+                               promptText="请输入密码（不会被保存）"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="明文：" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextArea fx:id="plainTextArea"
+                          promptText="在这里输入要加密的原字符串…"
+                          wrapText="true" prefRowCount="7"
+                          GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="密文（Base64）：" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextArea fx:id="cipherTextArea"
+                          promptText="请输入&lt;原始字符串&gt;（Base64）"
+                          wrapText="true" prefRowCount="7"
+                          GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="解密结果：" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextArea fx:id="decryptedTextArea"
+                          editable="false"
+                          wrapText="true" prefRowCount="7"
+                          GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button text="加密 -&gt;" onAction="#onEncrypt"/>
+                <Button text="&lt;- 解密" onAction="#onDecrypt"/>
+                <Button text="清空" onAction="#onClear"/>
+            </HBox>
+
+            <Label fx:id="statusLabel"
+                   text="提示：Maven 会自动下载 JavaFX 依赖，无需手动放 lib。"
+                   style="-fx-opacity: 0.85;"/>
+        </VBox>
+    </center>
+
+</BorderPane>
