@@ -16,5 +16,8 @@ temp_build/
 app.ico
 dependency-reduced-pom.xml
 
+# Releases
+.tasks/
+
 # Code exporter
 code_exporter/
