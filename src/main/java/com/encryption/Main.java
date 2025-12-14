@@ -5,7 +5,9 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
+
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -23,6 +25,16 @@ public class Main extends Application {
                 Objects.requireNonNull(getClass().getResource("/com/encryption/ui/theme.css")).toExternalForm()
         );
         stage.setTitle("String Encryptor (AES-GCM + PBKDF2)");
+        // 设置窗口图标
+        // 请将图标文件放置在 src/main/resources/com/encryption/icon.png
+        // 建议使用 32x32 或 64x64 的 PNG 图片
+        try {
+            stage.getIcons().add(new Image(
+                    Objects.requireNonNull(getClass().getResource("/com/encryption/icon.png")).toExternalForm()
+            ));
+        } catch (Exception ignored) {
+            // 图标文件不存在时忽略，避免影响程序启动
+        }
         stage.setScene(scene);
         if (root instanceof Region r) {
             double w = r.getPrefWidth();
