@@ -1,0 +1,60 @@
+.root {
+  -fx-font-family: "Segoe UI", "Microsoft YaHei", "Arial";
+  -fx-background-color: linear-gradient(to bottom, #FFF9E9, #FFF4DC);
+}
+
+Label {
+  -fx-text-fill: #5C4B4B;
+}
+
+GridPane, VBox, HBox {
+  -fx-background-radius: 12;
+}
+GridPane {
+  -fx-background-color: rgba(255, 250, 233, 0.95);
+  -fx-padding: 12;
+  -fx-border-color: #FDE2E2;
+  -fx-border-radius: 12;
+  -fx-border-width: 1;
+}
+
+TextArea, PasswordField {
+  -fx-background-color: #FFFFFF, #FFF6E6;
+  -fx-background-insets: 0, 1;
+  -fx-background-radius: 12, 10;
+  -fx-border-color: #F3B3B3;
+  -fx-border-radius: 12;
+  -fx-border-width: 1;
+  -fx-prompt-text-fill: rgba(92, 75, 75, 0.5);
+}
+TextArea:focused, PasswordField:focused {
+  -fx-border-color: #F87171;
+  -fx-background-color: #FFFFFF, #FFF1E6;
+}
+
+Button {
+  -fx-background-color: #FCA5A5;
+  -fx-text-fill: #6B0F1A;
+  -fx-background-radius: 12;
+  -fx-padding: 8 14 8 14;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(gaussian, rgba(242, 82, 82, 0.15), 8, 0.25, 0, 2);
+  -fx-border-color: transparent;
+}
+Button:hover {
+  -fx-background-color: #F87171;
+}
+Button:pressed {
+  -fx-background-color: #EF4444;
+  -fx-translate-y: 1;
+}
+
+#statusLabel {
+  -fx-background-color: #FFF3CD;
+  -fx-text-fill: #7A4B4B;
+  -fx-padding: 8 12 8 12;
+  -fx-background-radius: 8;
+  -fx-border-color: #FBD5D5;
+  -fx-border-width: 1;
+  -fx-border-radius: 8;
+}

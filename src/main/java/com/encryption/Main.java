@@ -15,6 +15,9 @@ public class Main extends Application {
                 Objects.requireNonNull(getClass().getResource("/com/encryption/ui/main-view.fxml"))
         );
         Scene scene = new Scene(loader.load());
+        scene.getStylesheets().add(
+                Objects.requireNonNull(getClass().getResource("/com/encryption/ui/theme.css")).toExternalForm()
+        );
         stage.setTitle("String Encryptor (AES-GCM + PBKDF2)");
         stage.setScene(scene);
         stage.show();
